@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>iBlog - Heaven for bloggers</title>
+</head>
+<body>
+    <nav class="navigation max-width-1 m-auto">
+        <div class="nav-left">
+            <a href="/">
+                <span><img src="img/logo.png" width="94px" alt=""></span>
+            </a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="nav-right">
+            <form action="search.html" method="get">
+                <input class="form-input" type="text" name="query" placeholder="Article Search">
+                <button class="btn">Search</button>
+            </form>
+
+        </div>
+
+    </nav>
+ 
+
+    <div class="max-width-1 m-auto"><hr></div>
+    <div class="home-articles max-width-1 m-auto font2">
+        
+        <h2>Search Results for Django (0.03 seconds)</h2>
+        <div class="year-box adjust-year">
+            <div>
+                <h3>Year </h3>
+            </div>
+            <div>
+                <input type="radio" name="year" value="2023" id=""> 2023
+            </div>
+            <div>
+                <input type="radio" name="year" value="2024" id=""> 2024
+            </div>
+            <div>
+                <input type="radio" name="year" value="2025" id=""> 2025
+            </div>
+        </div>
+        <div class="home-article" data-year="2023">
+            <div class="home-article-img">
+                <img src="img/bp9.jpg" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="post9.html"><h3>Healthy Meal Prep: A Complete Guide for Busy People</h3></a>
+                
+                <span>Sakshi Patil</span>
+                <span>Aug 23 | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article" data-year="2024">
+            <div class="home-article-img">
+                <img src="img/bp6.jpg" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="post5.html"><h3>Hidden Gems: Off-the-Beaten-Path Destinations</h3></a>
+                
+                <span>Rohan Mehta</span>
+                <span>March 30, 2024 | 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article" data-year="2025">
+            <div class="home-article-img">
+                <img src="img/bp1.jpg" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="post6.html"><h3>10 Proven Ways to Boost Your Writing Productivity</h3></a>
+                
+                <span>Ayesha Khan</span>
+                <span>June 20, 2025| 6 min read</span>
+            </div>
+        </div>
+        <div class="home-article" data-year="2024">
+            <div class="home-article-img">
+                <img src="img/bp5.jpg" alt="article">
+            </div>
+            <div class="home-article-content font1">
+                <a href="post2.html"><h3>Building Responsive Websites with Modern CSS</h3></a>
+                
+                <span>Michael Chen</span>
+                <span>Feb 10, 2024 | 5 min read</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; 2025 iBlog.com.All rights reserved. </p>
+
+    </div>
+    <script>
+  // URL se query read karna
+  const params = new URLSearchParams(window.location.search);
+  const searchQuery = params.get("query"); // e.g. "django"
+
+  document.querySelector("h2").textContent = `Search Results for ${searchQuery}`;
+
+  // Year filter ka logic
+  const radios = document.querySelectorAll("input[name='year']");
+  radios.forEach(radio => {
+    radio.addEventListener("change", function() {
+      const selectedYear = this.value;
+      const articles = document.querySelectorAll(".home-article");
+
+      articles.forEach(article => {
+        const year = article.getAttribute("data-year"); // custom attribute
+        if (year === selectedYear || selectedYear === "") {
+          article.style.display = "flex"; // show
+        } else {
+          article.style.display = "none"; // hide
+        }
+      });
+    });
+  });
+</script>
+
+    <div class="footer">
+        <p>Copyright &copy; 2025 iBlog.com.All rights reserved. </p>
+
+    </div>
+    
+</body>
+</html>
